@@ -9,13 +9,15 @@ public class Tund {
 
     @Override
     public String toString() {
-        return "Tund: " + tund +
+        return "\nTund: " + tund +
                 "\nalgus: " + algus +
                 "\nlopp: " + lopp +
                 "\naine: " + aine +
                 "\ngrupp: " + grupp +
                 "\nopetaja: " + opetaja +
-                "\nruum: " + ruum
+                "\nruum: " + ruum +
+                "\n================" +
+                "\n"
                 ;
     }
 }

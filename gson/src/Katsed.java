@@ -66,9 +66,9 @@ public class Katsed {
         tunnid.add(viiesTund);
 
         Tunniplaan vs18 = new Tunniplaan();
-        vs18.nadal = "2019-11-18";
-        vs18.tunnid = new HashMap<String, List<Tund>>();
-        vs18.tunnid.put("2019-11-18", tunnid);
+//        vs18.nadal = "2019-11-18";
+//        vs18.tunnid = new HashMap<String, List<Tund>>();
+//        vs18.tunnid.put("2019-11-18", tunnid);
 
 //        System.out.println(vs18);
 
@@ -87,6 +87,10 @@ public class Katsed {
                 result += str;
             }
             System.out.println(result);
+            Gson tunniplaaniJSON = new Gson();
+            vs18 = tunniplaaniJSON.fromJson(result, Tunniplaan.class);
+            System.out.println(vs18.nadal);
+            System.out.println(vs18.tunnid);
         }
         catch (Exception ex) {
             ex.printStackTrace();

@@ -1,4 +1,8 @@
 import com.google.gson.Gson;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,6 +75,21 @@ public class Katsed {
         Gson g = new Gson();
         String vs18JSON = g.toJson(vs18);
 
-        System.out.println(vs18JSON);
+//        System.out.println(vs18JSON);
+
+
+        try {
+            URL url = new URL("https://tkhk.siseveeb.ee/veebilehe_andmed/tunniplaan/tunniplaan?nadal=18.11.2019&grupp=1282");
+            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+            String str = "";
+            String result = "";
+            while (null != (str = br.readLine())) {
+                result += str;
+            }
+            System.out.println(result);
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

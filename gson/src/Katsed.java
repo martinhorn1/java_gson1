@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Katsed {
     public static void main(String[] args) {
@@ -50,8 +52,7 @@ public class Katsed {
 //        System.out.println(kolmasTund);
 //        System.out.println(neljasTund);
 
-        Paev esmaspaev = new Paev();
-        esmaspaev.kuupaev = "18.11.2019";
+
         ArrayList<Tund> tunnid = new ArrayList<Tund>();
         tunnid.add(esimeneTund);
         tunnid.add(teineTund);
@@ -59,8 +60,11 @@ public class Katsed {
         tunnid.add(neljasTund);
         tunnid.add(viiesTund);
 
-        esmaspaev.tundideNimekiri = tunnid;
+        Tunniplaan vs18 = new Tunniplaan();
+        vs18.nadal = "2019-11-18";
+        vs18.tunnid = new HashMap<String, List<Tund>>();
+        vs18.tunnid.put("2019-11-18", tunnid);
 
-        System.out.println(esmaspaev);
+        System.out.println(vs18);
     }
 }

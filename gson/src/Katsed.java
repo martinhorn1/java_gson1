@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Katsed {
     public static void main(String[] args) {
@@ -89,8 +90,14 @@ public class Katsed {
             System.out.println(result);
             Gson tunniplaaniJSON = new Gson();
             vs18 = tunniplaaniJSON.fromJson(result, Tunniplaan.class);
-            System.out.println(vs18.nadal);
-            System.out.println(vs18.tunnid);
+
+            for (Map.Entry<String, List<Tund>> element : vs18.tunnid.entrySet()) {
+                System.out.println(element.getKey());
+                for (Tund tund : element.getValue()) {
+                    System.out.println(tund);
+                    System.out.println("-----------------");
+                }
+            }
         }
         catch (Exception ex) {
             ex.printStackTrace();
